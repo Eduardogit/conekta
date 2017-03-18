@@ -8,7 +8,7 @@ exports.getAll = {
   handler: function (request, reply) {
     Books.getAllBooks(function(err, book) {
       if (!err) {
-          return reply(book);
+          return reply({item:{book},ok:true});
       } else {
           return reply(Boom.badImplementation(err)); 
       }
@@ -33,14 +33,6 @@ exports.getOne = {
 };
 
 exports.create = {
-  //quitting this controls the failure response will be error: , ok:false
-  validate: {
-    payload: {
-      bookid   : Joi.string().required(),
-      title  : Joi.string().required(),
-      author  : Joi.string().required()
-    }
-  },
   handler: function (request, reply) {
     Books.createBook(request.payload, function(err, book) {
         if (!err) {
@@ -57,11 +49,6 @@ exports.create = {
 };
 
 exports.update = {
-  validate: {
-    payload: {
-      title  : Joi.string().required()
-    }
-  },
   handler: function (request, reply) {
     Books.updateUser(request.params.bookid, request.payload.title, function(err, book){
       if (!err) {

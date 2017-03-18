@@ -15,32 +15,6 @@ var BookSchema = new Schema({
 
 });
 
-//BookSchema.virtual('title').get(function() {
-  //if(this.title){
-      //return this.title + ' ' + this.author;
-  //}
-  //else{
-      //return this.title;
-  //}
-//});
-
-//BookSchema.virtual('title').set(function (title) {
-  //var split = title.split(' ');
-  //this.author = split[0];
-//});
-
-
-// will validate firstname only contains alphabet.
-
-//BookSchema.path('title').validate(function (v) {
-    //return !/[^a-zA-Z0-9]/.test(v);
-//});
-
-// will validate firstname only contains alphabet.
-
-//BookSchema.path('author').validate(function (v) {
-    //return !/[^a-zA-Z]/.test(v);
-//});
 
 BookSchema.statics.getAllBooks= function(callback) {
     this.find({}, callback);

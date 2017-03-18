@@ -7,5 +7,5 @@ exports.endpoints = [
   { method: 'GET', path: '/book', config: Book.getAll},
   { method: 'GET', path: '/book/{bookid}', config: Book.getOne},
   { method: 'PUT', path: '/book/{bookid}', config: Book.update},
-  { method: 'DELETE', path: '/book/{userid}', config: Book.remove}
+  { method: 'DELETE', path: '/book/{bookid}', config: Book.remove}
 ];
