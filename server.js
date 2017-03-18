@@ -1,24 +1,17 @@
-const hapi = require('hapi');
-const mongojs = require('mongojs');
-const server = new hapi.Server();
-server.connection({
-	host: 'localhost',
-	port: 4000
+var Hapi = require('hapi'),
+  Routes = require('./routes'),
+  Db = require('./databases/db'),
+  Config = require('./config/config');
+
+var app = {};
+app.config = Config;
+
+var server = new Hapi.Server();
+
+server.connection({ port: app.config.server.port });
+
+server.route(Routes.endpoints);
+
+server.start(function () {
+  console.log('Server started ', server.info.uri);
 });
-
-server.route({
-	method: 'GET',
-	path: '/books',
-	handler: function(req, res){
-		return res('prueba get....')
-	}
-})
-
-server.app.db = mongojs('hapi-rest-mongo', ['books']);  
-
-server.start((err) => {
-	if(err){
-		throw err;		
-	}
-	console.log('server running', server.info.uri)
-})

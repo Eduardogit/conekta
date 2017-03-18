@@ -1,0 +1,29 @@
+{
+  "name": "conekta",
+  "version": "1.0.0",
+  "description": "conekta exercise",
+  "main": "server.js",
+  "dependencies": {
+    "boom": "^4.2.0",
+    "hapi": "^16.1.0",
+    "joi": "^10.2.2",
+    "mongojs": "^2.4.0",
+    "mongoose": "^4.9.0",
+    "node-uuid": "^1.4.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eduardogit/conekta.git"
+  },
+  "author": "EduardoEnriquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eduardogit/conekta/issues"
+  },
+  "homepage": "https://github.com/Eduardogit/conekta#readme"
+}
