@@ -15,9 +15,12 @@ while opc != 4 :
 		if(opc == 2):
 			id = input('Ingresa el id \n>:')
 			book.get(id)	
-			print book.title
-			print book.author
-			print book._response.ok
+			if(book._response.ok == "true"):
+				print book.title
+				print book.author
+				print book._response.ok
+			else:
+				print book._response.ok
 		if(opc == 3):
 			title = raw_input('Titulo:\n>:')
 			auth  = raw_input('Autor:\n>:')

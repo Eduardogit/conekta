@@ -36,10 +36,12 @@ class Book:
 	def get(self,id):
 		url = self._url('/book/{}'.format(id))
 		Object = requests.get(url)
-		self.title  = Object.json()['item']['book']['title']
-		self.author = Object.json()['item']['book']['author']
-		self._response.ok = "true"
-
+		if(Object.json()['ok'] == False):
+			self._response.ok = "false"
+		else:
+			self.title  = Object.json()['item']['book']['title']
+			self.author = Object.json()['item']['book']['author']
+			self._response.ok = "true"
 	def getAll(self):
 		url = self._url('/book')
 		return requests.get(url)
