@@ -14,6 +14,7 @@ while opc != 4 :
 				print 'Titulo: {} Author:{} '.format(book['title'],book['author'])
 		if(opc == 2):
 			id = input('Ingresa el id \n>:')
+			book = Library.Book()
 			book.get(id)	
 			if(book._response.ok == "true"):
 				print book.title
