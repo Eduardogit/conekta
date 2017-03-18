@@ -17,7 +17,7 @@ class Book:
 
 	#this function append the base path to api url request
 	def _url(self,path):
-		return 'http://androidfgbh89d-X455LAB:3000' + path
+		return 'http://localhost:3000' + path
 
 
 	def create(self):
