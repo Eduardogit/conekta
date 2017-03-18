@@ -36,7 +36,6 @@ class Book:
 	def get(self,id):
 		url = self._url('/book/{}'.format(id))
 		Object = requests.get(url)
-		print self.titl
 		self.title  = Object.json()['item']['book']['title']
 		self.author = Object.json()['item']['book']['author']
 		self._response.ok = "true"
