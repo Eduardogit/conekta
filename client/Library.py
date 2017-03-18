@@ -38,6 +38,7 @@ class Book:
 		Object = requests.get(url)
 		if(Object.json()['ok'] == False):
 			self._response.ok = "false"
+			
 		else:
 			self.title  = Object.json()['item']['book']['title']
 			self.author = Object.json()['item']['book']['author']
